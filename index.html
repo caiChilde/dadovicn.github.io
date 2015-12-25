@@ -183,9 +183,9 @@ function loopWin(loopList, time, callback) {
         infoWindow.redraw();
         i++;
         if( loopList[i] ) {
-            var time = loopList[i].timeout || 2000;
+            var time = loopList[i].timeout || 3000;
         } else {
-            var time = 2000;
+            var time = 3000;
         }
         timeout = setTimeout(loopWinInner, time);
     }
@@ -213,9 +213,9 @@ function panZoom_JYU() {
                 var marker = new BMap.Marker(MZ_JYU);
                 map.addOverlay(marker);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-                setTimeout(panZoom_HEY, 1000);
+                setTimeout(panZoom_HEY, 3000);
             });
-        }, 1000);
+        }, 3000);
     });
 }
 
@@ -249,9 +249,10 @@ function panZoom_HEY() {
                         point: MZ_JYU
                     }
                 ];
-                loopWin(between, 2000, showPhotos);
-            }, 2000);
-        }, 1000);
+                loopWin(between, 3000, showPhotos);
+                //两千秒以后执行showPhotos
+            }, 3000);
+        }, 3000);
     });
 }
 
@@ -328,9 +329,9 @@ function showPhotos() {
                     point: {lng: 113.748164, lat:34.402078}
                 }
             ];
-            loopWin(photos, 2000, wannaTo);
-        },2000);
-    }, 1000);
+            loopWin(photos, 3000, wannaTo);
+        },3000);
+    }, 3000);
 }
 
 function wannaTo() {
@@ -364,6 +365,7 @@ function wannaTo() {
                     point: {lng: 120.626633, lat:31.329706}
                 },
                 {
+
                     title: '香港迪士尼',
                     content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaohongkongdishini.jpg" width="500" height="400" alt="wannaTo" />',
                     //114.053516, 22.315415	
