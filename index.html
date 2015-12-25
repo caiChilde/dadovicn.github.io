@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>Hello Meijun!</title>
+    <title>Hello RanYanGe</title>
     <style type="text/css">
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
     margin:0;
@@ -60,7 +60,7 @@ body {
     width: 100%;
     position: absolute;
     z-index: 999;
-    background: url("images/ticket.jpg") no-repeat center center #FFFAD1;
+    background: url("http://7xph4b.com1.z0.glb.clouddn.com/daodaohappy.gif") no-repeat center center #FFFAD1;
     top: 0;
     left: 0;
     text-align: center;
@@ -116,9 +116,9 @@ body {
 <script type="text/javascript">
 
 /*
- * 常用变量
- * 梅州嘉应学院： 116.135018,24.33438
- * 广州广外艺：   113.345774,23.153356
+ * 常用变量 
+ * 郑州工业应用技术学院： 116.135018,24.33438
+ * 郑州大学北校区：   113.345774,23.153356
  * 426 KM
  * 5H
  */
@@ -126,13 +126,13 @@ body {
 var MP_CEN = {lng: 3.894763, lat: 44.529534};
 // 中国中心
 var CN_CEN = {lng: 103.758427, lat: 36.172333};
-// 嘉应学院
+// 郑州华信学院  113.759519, 34.421957
 var MZ_JYU = {lng: 116.135018, lat: 24.33438};
-// 广外艺
+// 郑州大学北校区  113.668125, 34.788481
 var GZ_GTC = {lng: 113.345774, lat: 23.153356};
-// 广州市
+// 新郑市 113.800284, 34.387289
 var GD_GZS = {lng: 113.256838, lat: 23.157309};
-// 河源市
+// 郑州市 113.640457, 34.762033
 var GD_HYS = {lng: 114.701682, lat: 23.754195};
 // 背景音乐
 var MUSIC;
@@ -223,25 +223,29 @@ function panZoom_HEY() {
     zoomTo(9, 1000, function() {
         map.panTo(new BMap.Point(GD_HYS.lng, GD_HYS.lat));
         setTimeout(function() {
+        	//起始地 新郑市
             var start = new BMap.Point(MZ_JYU.lng, MZ_JYU.lat);
+            //终点 
             var end   = new BMap.Point(GZ_GTC.lng, GZ_GTC.lat);
             var driving2 = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: false}});
             driving2.search(start, end);
+
             setTimeout(function() {
                 var between = [
                     {
-                        title: '梅州 → 广州',
+                        title: '新郑 → 郑州',
                         content: '426 km.',
                         point: MZ_JYU
                     },
                     {
-                        title: '梅州 → 广州',
-                        content: '5 hours by train.',
+                        title: '新郑 → 郑州',
+                        content: '2 hours by bus.',
                         point: GZ_GTC
                     },
                     {
-                        title: '变得是距离，不变的是坚持；',
-                        content: '<img src=" http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="200" height="149" alt="ticket" />',
+                        title: '离得那么近,却像隔了大半个中国,见一面总是很难',
+                        // 新郑到郑州的公交图片
+                        content: '<img src=" http://http://7xph4b.com1.z0.glb.clouddn.com/daodaobusToZhengzhou.jpg" width="200" height="149" alt="bus" />',
                         point: MZ_JYU
                     }
                 ];
@@ -251,6 +255,9 @@ function panZoom_HEY() {
     });
 }
 
+/*
+	地图移动 -- > 显示图片
+*/
 function showPhotos() {
     map.clearOverlays();
     map.panTo(new BMap.Point(GD_GZS.lng, GD_GZS.lat));
@@ -258,64 +265,73 @@ function showPhotos() {
         zoomTo(13, 1000, function() {
             var photos = [
                 {
-                    title: '纪念堂',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="纪念堂" />',
-                    point: {lng: 113.271147, lat: 23.139616}
+                    title: '被调戏 ...',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaohuaxin.jpg" width="500" height="373" alt="华信学院后花园" />',
+                    //113.770667, 34.417788
+                    point: {lng:113.770667, lat:34.417788}
                 },
                 {
-                    title: '陈家祠',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="陈家祠" />',
-                    point: {lng: 113.252764, lat: 23.131838}
+                    title: '要拍有感觉的照片',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaohuaxin2.jpg" width="500" height="373" alt="火车道" />',
+                    //113.787447, 34.417044
+                    point: {lng:113.787447, lat:34.417044}
                 },
                 {
-                    title: '看电影',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="看电影" />',
-                    point: {lng: 113.268865, lat: 23.200458}
+                    title: '正脸也不舍得给拍...小气',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="华信学院后花园" />',
+                    point: {lng:113.770667, lat:34.417788}
                 },
                 {
-                    title: '',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="陈家祠" />',
-                    point: {lng: 113.252764, lat: 23.131838}
+                    title: '一定很好吃吧...哈哈',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="373" alt="我学校" />',
+                    //113.668871, 34.787814
+                    point: {lng: 113.668871, lat:34.787814}
                 },
                 {
                     title: '吃货',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="280" height="375" alt="吃货" />',
-                    point: {lng: 113.275619, lat: 23.127547}
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="280" height="375" alt="我学校" />',
+                    point: {lng: 113.671601, lat:34.789378}
                 },
                 {
-                    title: '',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="375" alt="陈家祠" />',
-                    point: {lng: 113.252764, lat: 23.131838}
+                    title: '一定很好吃吧..哈哈',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaozzuB.jpg width="280" height="375" alt="我爬树还是蛮溜的" />',
+                    point: {lng: 113.669414, lat:34.788251}
                 },
                 {
-                    title: '臭美中...',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg width="280" height="375" alt="臭美" />',
-                    point: {lng: 113.275619, lat: 23.127547}
+                    title: '郑州大学新校区玩耍..',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaozzu.jpg" width="499" height="373" alt="You" />',
+                    point: {lng: 113.547285, lat:34.832167}
+                },
+               
+                 {
+                    title: '上海那段时间真挺内疚的 , 惹了你不开心',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaoshanghai.jpg" width="500" height="375" alt="一定很不开心吧, sorry , honey" />',
+                    point: {lng:121.506393, lat:31.245132}
                 },
                 {
-                    title: '臭美中...',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="280" height="375" alt="臭美" />',
-                    point: {lng: 113.248583, lat: 23.123725}
+                    title: '出去玩也不带我 ~~~~(>_<)~~~~',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaoshanghai2.jpg" width="500" height="375" alt="上海某海滩" />',
+                    point: {lng: 121.775943, lat:31.224059}
+                },
+                
+                {
+                    title: '真羡慕你们这般恩爱',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaogays.jpg" width="280" height="375" alt="谁知道这是去哪里完了╭(╯^╰)╮" />',
+                    //113.77576, 34.419769
+                    point: {lng: 113.77576,lat: 34.419769}
+                },
+                
+                {
+                    title: '又秀恩爱....╭(╯^╰)╮',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaoxiuenai.jpg" width="500" height="375" alt="未知地点" />',
+                    //113.7588, 34.406725
+                    point: {lng: 113.7588, lat:34.406725}
                 },
                 {
-                    title: '',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="499" height="373" alt="You" />',
-                    point: {lng: 113.340995, lat: 23.106222}
-                },
-                {
-                    title: '又是离开，又是不舍...',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="375" alt="离开" />',
-                    point: {lng: 113.358452, lat: 23.158306}
-                },
-                {
-                    title: '红海湾',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="375" alt="红海湾" />',
-                    point: {lng: 115.573511, lat: 22.712665}
-                },
-                {
-                    title: '后山',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="375" alt="后山" />',
-                    point: {lng: 115.622433, lat: 23.184734}
+                    title: '不会水也跟着...O__O "…',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaoqunale.jpg" width="500" height="375" alt="未知地点" />',
+                    //113.748164, 34.402078
+                    point: {lng: 113.748164, lat:34.402078}
                 }
             ];
             loopWin(photos, 2500, wannaTo);
@@ -332,33 +348,38 @@ function wannaTo() {
             var wanna = [
                 {
                     title: '',
-                    content: '地图标上想去的地方，有一天，带着你去流浪。',
+                    content: '那么多想去的地方,一定带你去看一看',
                     point: CN_CEN
                 },
                 {
-                    title: '厦门',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="338" alt="wannaTo" />',
-                    point: {lng: 118.148154, lat: 24.497912}
+                    title: '华山',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaohuashan.jpg" width="500" height="338" alt="wannaTo" />',
+                    //110.067267, 34.504118	
+                    point: {lng: 110.067267, lat:34.504118	}
                 },
                 {
-                    title: '凤凰古镇',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="337" alt="wannaTo" />',
-                    point: {lng: 100.21191, lat: 26.928061}
+                    title: '三亚',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaosanya.jpg" width="500" height="337" alt="wannaTo" />',
+                    //109.551424, 18.278355
+                    point: {lng: 109.551424, lat:18.278355}
                 },
                 {
-                    title: '桂林阳朔',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="499" height="399" alt="wannaTo" />',
-                    point: {lng: 110.503626, lat: 24.780932}
+                    title: '苏州园林',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaosuzhouyuanlin.jpg" width="499" height="399" alt="wannaTo" />',
+                    //	120.626633, 31.329706
+                    point: {lng: 120.626633, lat:31.329706}
                 },
                 {
-                    title: '西藏',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="400" alt="wannaTo" />',
-                    point: {lng: 91.115691, lat: 29.687083}
+                    title: '香港迪士尼',
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaohongkongdishini.jpg" width="500" height="400" alt="wannaTo" />',
+                    //114.053516, 22.315415	
+                    point: {lng:114.053516, lat:22.315415	}
                 },
                 {
                     title: '杭州西湖',
-                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaopic1.jpg" width="500" height="327" alt="wannaTo" />',
-                    point: {lng: 120.151946, lat: 30.250472}
+                    content: '<img src="http://7xph4b.com1.z0.glb.clouddn.com/daodaoxihu.jpg" width="500" height="327" alt="wannaTo" />',
+                    //120.15301, 30.250125
+                    point: {lng: 120.15301, lat:30.250125}
                 }
             ];
         loopWin(wanna, 1000, showMarkerText);
